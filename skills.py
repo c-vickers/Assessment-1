@@ -97,17 +97,22 @@ def smallest_int(number_list):
         True
 
     """
-    smallest = None
-    start = 0
-    end = len(number_list) - 1
-    while start < end:
-        if number_list[start] < number_list[start + 1]:
-            smallest = number_list[start]
-            start += 1
-        elif number_list[start] > number_list[start + 1]:
-            smallest = number_list[start +1]
-            start += 1
-    return smallest
+    # smallest = None
+    # start = 0
+    # end = len(number_list) - 1
+    # while start < end:
+    #     if number_list[start] < number_list[start + 1]:
+    #         smallest = number_list[start]
+    #         start += 1
+    #     elif number_list[start] > number_list[start + 1]:
+    #         smallest = number_list[start +1]
+    #         start += 1
+    # return smallest
+    if number_list == []:
+        return None
+    else:
+        number_list.sort()
+        return number_list[0]
 
 def largest_int(number_list):
     """Find the largest integer in a list of integers and return it.
@@ -126,8 +131,12 @@ def largest_int(number_list):
         True
 
     """
-
-    return 0
+    if number_list == []:
+        return None
+    else:
+        number_list.sort()
+        number_list.reverse()
+        return number_list[0]
 
 
 def halvesies(number_list):
@@ -223,8 +232,10 @@ def join_strings(word_list):
         ''
 
     """
+    string = ""
     for word in word_list:
-        print word,
+        string += word
+    return string
 
 
 
@@ -258,14 +269,18 @@ def join_strings_with_comma(list_of_words):
         'Pretzel'
 
     """
-    for word in list_of_words:
-        if len(list_of_words) <= 1:
-            print word
-        elif len(list_of_words) > 1:
-            print word + ',',
-
-
-    return 
+    string = ''
+    start = 0
+    end = len(list_of_words) -1
+    while start <= end:
+        for word in list_of_words:
+            if start < end:
+                string += word + ', '
+                start += 1
+            else:
+                string += word
+                start += 1
+    return string
 
 
 ##############################################################################
