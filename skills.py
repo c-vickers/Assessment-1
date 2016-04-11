@@ -14,12 +14,13 @@ def all_odd(number_list):
         []
 
     """
-    all_odd = []
-    for number in number_list:
-        if number % 2 > 0:
-            all_odd.append(number)
+    # all_odd = []
+    # for number in number_list:
+    #     if number % 2 > 0:
+    #         all_odd.append(number)
+    # return all_odd
+    all_odd = [number for number in number_list if number % 2 > 0]
     return all_odd
-
 
 def all_even(number_list):
     """Return a list of only the even numbers in the input list.
@@ -31,12 +32,13 @@ def all_even(number_list):
         []
 
     """
-    all_even = []
-    for number in number_list:
-        if number % 2 == 0:
-            all_even.append(number)
+    # all_even = []
+    # for number in number_list:
+    #     if number % 2 == 0:
+    #         all_even.append(number)
+    # return all_even
+    all_even = [number for number in number_list if number % 2 == 0]
     return all_even
-
 
 def print_indexes(my_list):
     """Print the index of each item in the input_list, followed by the item itself.
@@ -71,10 +73,13 @@ def long_words(word_list):
         []
 
     """
-    long_words = []
-    for word in word_list:
-        if len(word) > 4:
-            long_words.append(word)
+    # long_words = []
+    # for word in word_list:
+    #     if len(word) > 4:
+    #         long_words.append(word)
+    # return long_words
+
+    long_words = [word for word in word_list if len(word) > 4]
     return long_words
 
 
@@ -151,12 +156,14 @@ def halvesies(number_list):
         [0.5, 2.5]
 
     """
-    halvesies = []
-    for number in number_list:
-        half = float(number) / 2
-        halvesies.append(half)
-    return halvesies
+    # halvesies = []
+    # for number in number_list:
+    #     half = float(number) / 2
+    #     halvesies.append(half)
+    # return halvesies
 
+    halvesies = [float(number) / 2 for number in number_list]
+    return halvesies
 
 def word_lengths(word_list):
     """Return the length of words in the input list.
@@ -165,10 +172,13 @@ def word_lengths(word_list):
         [5, 3, 5, 4]
 
     """
-    word_length = []
-    for word in word_list:
-        length = len(word)
-        word_length.append(length)
+    # word_length = []
+    # for word in word_list:
+    #     length = len(word)
+    #     word_length.append(length)
+    # return word_length
+
+    word_length = [len(word) for word in word_list]
     return word_length
 
 
